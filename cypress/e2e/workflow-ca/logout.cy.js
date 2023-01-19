@@ -1,6 +1,6 @@
-describe("", () => {
+describe("logout", () => {
   beforeEach(() => {
-    cy.visit("http://127.0.0.1:5500/");
+    cy.visit("https://jonaslod.github.io/social-media-client/");
     cy.wait(500);
     cy.get("#registerForm .btn-close").click();
     cy.get(`header button[data-auth="login"]`).click();
