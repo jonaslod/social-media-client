@@ -7,6 +7,7 @@ const mockFetchSuccess = jest.fn().mockResolvedValue({
     email: "workflowca@stud.noroff.no",
     banner: null,
     avatar: null,
+    accessToken: "workflowca's token",
   }),
 });
 
