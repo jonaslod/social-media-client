@@ -1,7 +1,6 @@
 describe("login", () => {
-  const baseUrl = "https://jonaslod.github.io";
   beforeEach(() => {
-    cy.visit(`${baseUrl}/social-media-client/`);
+    cy.visit("/");
     cy.wait(500);
     cy.get("#registerForm .btn-close").click();
     cy.get(`header button[data-auth="login"]`).click();
@@ -13,7 +12,7 @@ describe("login", () => {
     cy.get(`#loginForm button[type="submit"]`).click();
     cy.url().should("include", "/?view=profile");
     cy.getAllLocalStorage().then((storage) =>
-      expect(storage[`${baseUrl}`].token).to.have.length.greaterThan(1)
+      expect(storage[Object.keys(storage)].token).to.have.length.greaterThan(1)
     );
   });
   it("cannot submit the login form with invalid credentials and is shown a message", () => {
