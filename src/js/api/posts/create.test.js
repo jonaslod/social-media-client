@@ -25,5 +25,6 @@ describe("create", () => {
   it("returns a valid item with a valid input", async () => {
     const post = await createPost("title", "body", "", ["1", "2"]);
     expect(post).toMatchObject(mockObject);
+    expect(fetch).toHaveBeenCalledTimes(1);
   });
 });

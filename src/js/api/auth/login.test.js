@@ -39,5 +39,6 @@ describe("login", () => {
     await login("workflowca@stud.noroff.no", "");
     const token = localStorage.getItem("token");
     expect(token).not.toBeNull();
+    expect(fetch).toHaveBeenCalledTimes(1);
   });
 });
